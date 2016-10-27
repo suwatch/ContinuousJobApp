@@ -7,10 +7,14 @@ namespace ContinuousJobApp
     {
         static void Main(string[] args)
         {
-            int sec = 10;
-            Console.WriteLine("Begin sleep {0}s ..", sec);
-            Thread.Sleep(sec * 1000);
-            Console.WriteLine("End sleep {0}s ..", sec);
+            int loop = 10;
+            Console.WriteLine("Begin Run");
+            while (--loop > 0)
+            {
+                Console.WriteLine("Loop {0}", loop);
+                Thread.Sleep(30000);
+            }
+            Console.WriteLine("End Run");
         }
     }
 }
