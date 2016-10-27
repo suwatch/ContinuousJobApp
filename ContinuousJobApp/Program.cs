@@ -11,7 +11,8 @@ namespace ContinuousJobApp
             var shutdownFile = Environment.GetEnvironmentVariable("WEBJOBS_SHUTDOWN_FILE");
             int loop = 10;
             Console.WriteLine("Begin Run");
-            while (--loop > 0)
+            bool shutdown = false;
+            while (--loop > 0 && !shutdown)
             {
                 Console.WriteLine("Loop {0}", loop);
                 for (int i = 0; i < 6; ++i)
@@ -20,6 +21,7 @@ namespace ContinuousJobApp
                     if (File.Exists(shutdownFile))
                     {
                         Console.WriteLine("Shutdown file exists {0}", shutdownFile);
+                        shutdown = true;
                         break;
                     }
                 }
