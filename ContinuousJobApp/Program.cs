@@ -15,9 +15,9 @@ namespace ContinuousJobApp
             while (--loop > 0 && !shutdown)
             {
                 Console.WriteLine("Loop {0}", loop);
-                for (int i = 0; i < 6; ++i)
+                for (int i = 0; i < 30; ++i)
                 {
-                    Thread.Sleep(5000);
+                    Thread.Sleep(1000);
                     if (File.Exists(shutdownFile))
                     {
                         Console.WriteLine("Shutdown file exists {0}", shutdownFile);
