@@ -10,7 +10,7 @@ namespace ContinuousJobApp
         {
             var shutdownFile = Environment.GetEnvironmentVariable("WEBJOBS_SHUTDOWN_FILE");
             int loop = 10;
-            Console.WriteLine("Begin Run");
+            Console.WriteLine("Begin Run.");
             bool shutdown = false;
             while (--loop > 0 && !shutdown)
             {
